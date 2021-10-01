@@ -6,8 +6,8 @@ const LINKING_ERROR =
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo managed workflow\n';
 
-const Fullscreen = NativeModules.Fullscreen
-  ? NativeModules.Fullscreen
+const Fullscreen = NativeModules.FullScreenModule
+  ? NativeModules.FullScreenModule
   : new Proxy(
       {},
       {
@@ -17,6 +17,8 @@ const Fullscreen = NativeModules.Fullscreen
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return Fullscreen.multiply(a, b);
+interface FullScreenInterface {
+  enableFullScreen(): void;
+  disableFullScreen(): void;
 }
+export default Fullscreen as FullScreenInterface;

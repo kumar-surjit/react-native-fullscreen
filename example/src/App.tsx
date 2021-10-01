@@ -1,18 +1,22 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-fullscreen';
+import { StyleSheet, View, Button } from 'react-native';
+import Fullscreen from 'react-native-fullscreen';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const enterFullScreenMode = () => {
+    Fullscreen.enableFullScreen();
+  };
 
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
+  const exitFullScreenMode = () => {
+    Fullscreen.disableFullScreen();
+  };
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <View style={{ marginBottom: 16 }}>
+        <Button onPress={enterFullScreenMode} title="Enable FullScreen Mode" />
+      </View>
+      <Button onPress={exitFullScreenMode} title="Exit FullScreen Mode" />
     </View>
   );
 }
@@ -22,10 +26,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+    paddingTop: 50,
   },
 });

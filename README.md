@@ -1,6 +1,6 @@
 # react-native-fullscreen
 
-This package helps developers to easily toggle between android full screen options and provides js methods to enable/disable full screen on android.
+This package helps developers to easily toggle between android full screen and normal mode by providing js methods to enable/disable full screen on android. It is specifically for android and has nothing to do with ios full screen.
 
 ## Installation
 
@@ -11,11 +11,22 @@ npm install react-native-fullscreen
 ## Usage
 
 ```js
-import { multiply } from "react-native-fullscreen";
+import Fullscreen from 'react-native-fullscreen';
 
 // ...
-
-const result = await multiply(3, 7);
+export default function App() {
+  const enterFullScreenMode = () => {
+    Fullscreen.enableFullScreen();
+  };
+// ...
+return (
+    <View style={styles.container}>
+      <View style={{ marginBottom: 16 }}>
+        <Button onPress={enterFullScreenMode} title="Enable FullScreen Mode" />
+      </View>
+      <Button onPress={exitFullScreenMode} title="Exit FullScreen Mode" />
+    </View>
+  );
 ```
 
 ## Contributing
