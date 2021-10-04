@@ -12,7 +12,7 @@ const Fullscreen = NativeModules.FullScreenModule
       {},
       {
         get() {
-          throw new Error(LINKING_ERROR);
+          if (Platform.OS === 'android') throw new Error(LINKING_ERROR);
         },
       }
     );
