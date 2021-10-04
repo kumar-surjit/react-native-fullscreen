@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Button } from 'react-native';
-import Fullscreen from 'react-native-fullscreen';
+import Fullscreen from '@surjit_kumar/react-native-fullscreen';
 
 export default function App() {
   const enterFullScreenMode = () => {

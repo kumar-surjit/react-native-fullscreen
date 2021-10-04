@@ -1,6 +1,6 @@
 {
   "name": "@surjit_kumar/react-native-fullscreen",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "This package helps developers to easily toggle between android full screen options and provides js methods to enable/disable full screen on android.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

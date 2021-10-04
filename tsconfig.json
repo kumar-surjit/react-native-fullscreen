@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "react-native-fullscreen": ["./src/index"]
+      "@surjit_kumar/react-native-fullscreen": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
